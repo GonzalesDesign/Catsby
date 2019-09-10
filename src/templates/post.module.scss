@@ -1,0 +1,29 @@
+@import './../styles/index.scss';
+
+
+h4 {
+	// @include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 300, 1.5rem, var(--rlg-color-medium-tint));
+	text-transform: uppercase;
+}
+
+h5 {
+	// @include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 300, 1.4rem, var(--rlg-color-medium-tint));
+	text-transform: uppercase;
+}
+
+.template {
+	display: block;
+
+	.title {
+		@include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 400, 2.5rem, var(--rlg-color-medium-tint));
+		margin: 0;
+		// border: 1px solid grey;
+	}
+
+	.publishedDate {
+		@include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 300, .8rem, var(--rlg-color-medium-tint));
+		margin: 16px 0 60px;
+		// border: 1px solid grey;
+	}
+
+}

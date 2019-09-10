@@ -1,0 +1,125 @@
+/******************************************************
+* Component: Shared Font Style
+* Copyright © 2019 GonzalesDesign
+* Platform: React 16.9.0
+* Updated: 19.08.217
+*******************************************************/
+
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+@import url("https://fonts.googleapis.com/css?family=Ovo");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Muli");
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400,500,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cinzel:400,700&display=swap');
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i");
+@import url('https://fonts.googleapis.com/css?family=Alegreya:400,400i,500,500i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700&display=swap');
+
+// @font-face {
+//     font-family: "socialFont";
+//     src: url("./../assets/fonts/social-media.ttf");
+// }
+// @font-face {
+//     font-family: "bodoniOrnaments";
+//     src: url("./../assets/fonts/Bodoni-Ornaments.ttf");
+// }
+
+// .harlow {
+//     font-family: "socialFont";
+// }
+
+/*---=| Shadows |=---*/
+$text-shadow: 1px 1px 0px rgba(rgb(104, 104, 104), 0.75);
+$box-shadow: 2px 2px 2px rgba(rgb(104, 104, 104), 0.5);
+$box-shadow-light: 2px 2px 2px rgba(rgb(104, 104, 104), 0.15);
+$text-shadow-light: 1px 1px 0px rgba(rgb(104, 104, 104), 0.25);
+$multistep-white-text-shadow: 0 0 #ffffff, 1px 1px #ffffff, 2px 2px #ffffff, 3px 3px rgb(249, 213, 174);
+.multistep-white-text-shadow {
+    text-shadow: $multistep-white-text-shadow;
+}
+
+/*---=| Font Mixin |=---*/
+@mixin fontFamilyWeightSizeColor($fontFam, $fontWt, $fontSz, $Color) {
+	font-family: $fontFam;
+	font-weight: $fontWt;
+	font-size: $fontSz;
+	color: $Color;
+	// to use: @include fontFamilyWeightSizeColor ($rlg-primary-font, 600, 1em);
+}
+
+/*---=| Shadow Mixin |=---*/
+@mixin shadowMixin($fontFam, $fontWt, $fontSz, $Color) {
+	font-family: $fontFam;
+	font-weight: $fontWt;
+	font-size: $fontSz;
+	color: $Color;
+	// to use: @include fontFamilyWeightSizeColor ($rlg-primary-font, 600, 1em);
+}
+
+/*---=| Font Variables |=---*/
+// $fontBarlow: "Barlow Condensed", sans-serif;
+// $fontMuli: "Muli", sans-serif;
+// $fontOvo: "Ovo", sans-serif;
+// $fontOswald: "Oswald", sans-serif;
+// $fontOpenSans: "Open Sans", sans-serif;
+// $fontRoboto: 'Roboto', sans-serif;
+// $fontRobotoCondensed: 'Roboto Condensed', sans-serif;
+// $fontMontserrat: 'Montserrat', sans-serif;
+// $fontHind: 'Hind', sans-serif;
+// $fontCinzel: 'Cinzel', sans-serif;
+
+// $fontRye: 'Rye', cursive;
+
+// $fontMerriweather: "Merriweather", serif;
+// $fontAlegreya: 'Alegreya', serif;
+// $fontEBGaramond: 'EB Garamond', serif;
+
+// $fontSocialIcons: 'socialFont';
+// $fontBodoniOrnaments: 'bodoniOrnaments';
+
+:root {
+	--rlg-font-Barlow: "Barlow Condensed", sans-serif;
+	--rlg-font-Muli: "Muli", sans-serif;
+	--rlg-font-Ovo: "Ovo", sans-serif;
+	--rlg-font-Oswald: "Oswald", sans-serif;
+	--rlg-font-OpenSans: "Open Sans", sans-serif;
+	--rlg-font-Roboto: 'Roboto', sans-serif;
+	--rlg-font-RobotoCondensed: 'Roboto Condensed', sans-serif;
+	--rlg-font-Montserrat: 'Montserrat', sans-serif;
+	--rlg-font-Hind: 'Hind', sans-serif;
+	--rlg-font-Cinzel: 'Cinzel', sans-serif;
+
+	--rlg-font-Rye: 'Rye', cursive;
+
+	--rlg-font-Merriweather: "Merriweather", serif;
+	--rlg-font-Alegreya: 'Alegreya', serif;
+	--rlg-font-EBGaramond: 'EB Garamond', serif;
+
+	--rlg-font-SocialIcons: 'socialFont';
+	--rlg-font-BodoniOrnaments: 'bodoniOrnaments';
+
+	/*---=| Shadows: x y blur color |=---*/
+	--rlg-text-shadow: 1px 1px 0px rgba(var(--rlg-color-medium), 0.75);
+	--rlg-text-shadow-light: 1px 1px 0px rgba(var(--rlg-color-medium), 0.25);
+	--rlg-box-shadow: 2px 2px 2px rgba(var(--rlg-color-medium), 0.5);
+	--rlg-box-shadow-light: 2px 2px 2px rgba(var(--rlg-color-medium), 0.15);
+}
+
+
+
+/*---=| Font Mixin |=---*/
+@mixin fontFamilyWeightSizeColor($fontFam, $fontWt, $fontSz, $Color) {
+	font-family: $fontFam;
+	font-weight: $fontWt;
+	font-size: $fontSz;
+	color: $Color;
+	// to use: @include fontFamilyWeightSizeColor ($rlg-primary-font, 600, 1em);
+}

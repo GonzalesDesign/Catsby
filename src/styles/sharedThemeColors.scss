@@ -1,0 +1,83 @@
+/******************************************************
+* Component: Shared Theme
+* Copyright © 2019 GonzalesDesign
+* Platform: React 16.9.0
+* Updated: 19.08.17
+*******************************************************/
+:root {
+	--rlg-color-primary: #0b95da;
+	--rlg-color-primary-rgb: 11, 149, 218;
+	--rlg-color-primary-contrast: #ffffff;
+	--rlg-color-primary-contrast-rgb: 255, 255, 255;
+	--rlg-color-primary-shade: #0a83c0;
+	--rlg-color-primary-tint: #23a0de;
+
+	--rlg-color-secondary: #f0a11f;
+	--rlg-color-secondary-rgb: 240, 161, 31;
+	--rlg-color-secondary-contrast: #000000;
+	--rlg-color-secondary-contrast-rgb: 0, 0, 0;
+	--rlg-color-secondary-shade: #d38e1b;
+	--rlg-color-secondary-tint: #f2aa35;
+
+	--rlg-color-tertiary: #8a2b06;
+	--rlg-color-tertiary-rgb: 138, 43, 6;
+	--rlg-color-tertiary-contrast: #ffffff;
+	--rlg-color-tertiary-contrast-rgb: 255, 255, 255;
+	--rlg-color-tertiary-shade: #792605;
+	--rlg-color-tertiary-tint: #96401f;
+
+	--rlg-color-success: #6da03a;
+	--rlg-color-success-rgb: 109, 160, 58;
+	--rlg-color-success-contrast: #000000;
+	--rlg-color-success-contrast-rgb: 0, 0, 0;
+	--rlg-color-success-shade: #608d33;
+	--rlg-color-success-tint: #7caa4e;
+
+	--rlg-color-warning: #ffce00;
+	--rlg-color-warning-rgb: 255, 206, 0;
+	--rlg-color-warning-contrast: #ffffff;
+	--rlg-color-warning-contrast-rgb: 255, 255, 255;
+	--rlg-color-warning-shade: #e0b500;
+	--rlg-color-warning-tint: #ffd31a;
+
+	--rlg-color-danger: #cc1810;
+	--rlg-color-danger-rgb: 204, 24, 16;
+	--rlg-color-danger-contrast: #ffffff;
+	--rlg-color-danger-contrast-rgb: 255, 255, 255;
+	--rlg-color-danger-shade: #b4150e;
+	--rlg-color-danger-tint: #d12f28;
+
+	--rlg-color-dark: #241814;
+	--rlg-color-dark-rgb: 36, 24, 20;
+	--rlg-color-dark-contrast: #ffffff;
+	--rlg-color-dark-contrast-rgb: 255, 255, 255;
+	--rlg-color-dark-shade: #201512;
+	--rlg-color-dark-tint: #3a2f2c;
+
+	--rlg-color-medium: #6b6d7e;
+	--rlg-color-medium-rgb: 107, 109, 126;
+	--rlg-color-medium-contrast: #ffffff;
+	--rlg-color-medium-contrast-rgb: 255, 255, 255;
+	--rlg-color-medium-shade: #5e606f;
+	--rlg-color-medium-tint: #7a7c8b;
+
+	--rlg-color-light: #f4f5f8;
+	--rlg-color-light-rgb: 244, 244, 244;
+	--rlg-color-light-contrast: #000000;
+	--rlg-color-light-contrast-rgb: 0, 0, 0;
+	--rlg-color-light-shade: #d7d8da;
+	--rlg-color-light-tint: #f5f6f9;
+
+	--rlg-color-primary-tint2:#67c1ee;
+	--rlg-color-primary-tint3:#b5e0f5;
+	--rlg-color-primary-tint4:#e8f5fc;
+	--rlg-color-primary-shade2:rgb(15, 99, 141);
+	--rlg-color-primary-bright: #32d0f8;
+	--rlg-color-success-shade2: #047704;
+	--rlg-color-success-tint2: #accc8b;
+	--rlg-color-success-bright: #62bd08;
+	--rlg-color-danger-tint2: #e7514c;
+	--rlg-color-medium-tint2: #abadbb;
+	--rlg-color-medium-tint3: #ced0dd;
+	--rlg-color-medium-shade2: rgb(136, 138, 151);
+}
