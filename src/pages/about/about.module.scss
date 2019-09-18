@@ -1,0 +1,78 @@
+@import "./../../styles/index.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  border: 1px solid red;
+}
+h2 {
+  @include fontFamilyWeightSizeColor(
+    var(--rlg-font-OpenSans),
+    300,
+    null,
+    var(--rlg-color-medium-tint)
+  );
+  text-transform: uppercase;
+}
+.content h5 {
+  @include fontFamilyWeightSizeColor(
+    var(--rlg-font-OpenSans),
+    300,
+    1.2rem,
+    var(--rlg-color-medium-tint)
+  );
+  text-transform: uppercase;
+  text-align: center;
+  border: 0px solid orange;
+}
+
+.postBodyCopy {
+  background: white;
+  // margin: 4rem;
+  width: 70vw;
+  padding: 4rem;
+  
+  border: 0px solid orange;
+}
+
+.postTitle {
+  margin: 0 0 1.45rem;
+  text-align: center;
+  border: 0px solid orange;
+}
+.postDate {
+  padding-left: 1rem;
+  margin: 0;
+  text-align: center;
+  @include fontFamilyWeightSizeColor(
+    var(--rlg-font-OpenSans),
+    600,
+    0.7rem,
+    var(--rlg-color-medium-tint)
+  );
+  text-transform: uppercase;
+  border: 0px solid orange;
+}
+.postAuthor {
+  padding-left: 1rem;
+  margin: 0.2rem 0 3rem;
+  text-align: center;
+  @include fontFamilyWeightSizeColor(
+    var(--rlg-font-Merriweather),
+    300,
+    0.8rem,
+    var(--rlg-color-medium-tint)
+  );
+  font-style: italic;
+  border: 0px solid orange;
+}
+
+/*---=| Post |=---*/
+.htmlContent {
+  height: 200px;
+  width: 200px;
+  border: 1px solid orange;
+}

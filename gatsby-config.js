@@ -1,7 +1,13 @@
+
+const dotenv = require('dotenv')
+if(process.env.NODE_ENV !== 'production') {
+  dotenv.config()
+}
+
 module.exports = {
   siteMetadata: {
     title: `Catsby d' Great`,
-    author: `Andrew Lloyd Webber`,
+    author: `RLloyd Gonzales`,
     description: `You can teach a cat to do anything that it wants to do.`,
   },
 
@@ -16,6 +22,13 @@ module.exports = {
       }
     },
     'gatsby-plugin-sass',
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'about',
+    //     path: `${__dirname}/src/pages/about/`
+    //   }
+    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -23,7 +36,15 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'assets',
+    //     path: `${__dirname}/src/assets/`
+    //   }
+    // },
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -39,7 +60,9 @@ module.exports = {
         ]
       }
     },
+    
     // 'gatsby-transformer-json',
+
     // {
     //   resolve: `gatsby-transformer-json`,
     //   options: {

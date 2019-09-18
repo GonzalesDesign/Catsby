@@ -309,3 +309,49 @@
 	  }
 	}
  }
+
+
+//  blog-contentful.jsx GRID
+<Grid container spacing={2}>
+        {datas.allContentfulBlogPost.edges.map(data => {
+		  // {options}
+		  
+          return (
+			  <Grid item xs={12} sm={6} key={data.node.id}>
+				{/* <img src={data.node.media.fluid.src} alt="cheetah2"/>	
+			  	<div>{console.log('data.node.media.fluid.src}: ', data.node.media.fluid.src)}</div> */}
+				{/* <Img fluid={data.node.media.fluid} /> */}
+              <Card>
+                <CardActionArea>
+                  {/* <CardMedia
+                    // className={classes.media}
+                    // image={contentfulImage} //"/static/images/cards/contemplative-reptile.jpg"
+                    // title="Contemplative Reptile"
+				  > */}
+                  <CardMedia
+                    component="img"
+                    alt={data.node.title}
+                    height="140"
+                    image={data.node.media}
+                    title={data.node.title}
+                  >
+					{/* <img src={props.data.contentfulBlogPost.media.fluid.src} alt="cheetah2"/> */}
+					{/* {console.log('data.node.media.fluid.src}: ', data.node.media.fluid.src)} */}
+					{/* {data.node.media.fluid.src} */}
+                  {/* {documentToReactComponents(data.node.body.json, options)} */}
+                  </CardMedia>
+
+                  <CardContent>
+							<Typography gutterBottom variant="h5" component="h2" className={classes.cardFontMerri}>
+								<h2>{data.node.title}</h2>
+							</Typography>
+							<Typography variant="body2" color="textSecondary" component="p" className={classes.cardFontMerri}>
+								<p className={blogStyles.date}>{data.node.publishedDate}</p>
+							</Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          )
+        })}
+      </Grid>

@@ -247,9 +247,15 @@ h1 {
   padding-top: 0;
   // margin-bottom: 1.45rem;
   color: inherit;
-  font-family: var(--rlg-font-EBGaramond);
+  @include fontFamilyWeightSizeColor(
+    var(--rlg-font-OpenSans),
+    300,
+    null,
+    var(--rlg-color-medium-tint)
+  );
+  // font-family: var(--rlg-font-EBGaramond);
   // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  // font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   // line-height: 1.1;
@@ -264,9 +270,15 @@ h2 {
   padding-top: 0;
   // margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  //   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  // font-weight: bold;
+  @include fontFamilyWeightSizeColor(
+    var(--rlg-font-OpenSans),
+    300,
+    null,
+    var(--rlg-color-medium-tint)
+  );
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
   // line-height: 1.1;
@@ -281,9 +293,15 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  //   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  // font-weight: bold;
+  @include fontFamilyWeightSizeColor(
+    var(--rlg-font-OpenSans),
+    300,
+    null,
+    var(--rlg-color-medium-tint)
+  );
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
   line-height: 1.1;
@@ -325,7 +343,7 @@ h5 {
   @include fontFamilyWeightSizeColor(
     var(--rlg-font-OpenSans),
     300,
-    1.4rem,
+    .8rem,
     var(--rlg-color-medium-tint)
   );
 

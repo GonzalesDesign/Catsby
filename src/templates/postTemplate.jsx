@@ -1,22 +1,22 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Img from 'gatsby-image'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'; //npm install
+// import Img from 'gatsby-image'
 
-import LayoutPage from '../components/layout';
-import postStyles from'./post.module.scss'
+import LayoutPage from './../components/layout';
+import postStyles from'./postStyle.module.scss'
 
 import Head from './../components/head'
 
 export const queryData = graphql`
-		query ($slug: String!){
+		query ($slug: String!) {
 			contentfulBlogPost(slug: {eq: $slug}) {
 				title
+				slug
 				publishedDate(formatString: "MMMM Do, YYYY")
 				media {
 					fluid {
-					#   src
-						# ...GatsbyImageSharpFluid
+					  src
 						...GatsbyContentfulFluid
 					}
 				}
@@ -25,39 +25,24 @@ export const queryData = graphql`
 				}
 			}
 		}
-		# query ($slug: String!){
-		# 	contentfulBlogPost(slug: {eq: $slug}) {
-		# 		title
-		# 		publishedDate(formatString: "MMMM Do, YYYY")
-		# 		body {
-		# 			json
-		# 		}
-		# 		media {
-      #         fluid {
-		# 			#   src
-      #           # ...GatsbyImageSharpFluid
-      #           ...GatsbyContentfulFluid
-      #         }
-      #       }
-		# 	}
-		# }
 	`
 	console.log('queryData: ', queryData);
 
 const BlogTemplate = (props) => {
 
-	const options = {
+	const richTxtAssetOptions = {
 		renderNode: {
 			"embedded-asset-block": (node) => {
 				const alt = node.data.target.fields.title['en-US']
-				const url = node.data.target.fields.file['en-US'].url
-				return <img alt={alt} src={url}/>
+				const imgUrl = node.data.target.fields.file['en-US'].url
+				return <img alt={alt} src={imgUrl}/>
 			}
 		}
 	}
 	
 	return(
 		<LayoutPage>
+			
 			<Head title={props.data.contentfulBlogPost.title}/>
 
 			<div key={props.data.id} className={postStyles.template}>
@@ -67,15 +52,13 @@ const BlogTemplate = (props) => {
 				<p className={postStyles.publishedDate}> 
 					{props.data.contentfulBlogPost.publishedDate}
 				</p>
-				{/* {documentToReactComponents(props.data.contentfulBlogPost.body.json)} */}
-				{documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
+					{/* {documentToReactComponents(props.data.contentfulBlogPost.body.json)} */}
+				{documentToReactComponents(props.data.contentfulBlogPost.body.json, richTxtAssetOptions)}
 				{/* <div dangerouslySetInnerHTML={{__html: props.data.contentfulBlogPost.body}}></div> */}
-				{/* <Img fluid={props.data.contentfulBlogPost.fluid} /> */}
-				{/* <Img fluid={props.data.contentfulBlogPost.media} /> */}
+					{/* <Img fluid={props.data.contentfulBlogPost.fluid} /> */}
+					{/* <Img fluid={props.data.contentfulBlogPost.media} /> */}
 				<img src={props.data.contentfulBlogPost.media.fluid.src} alt={props.data.contentfulBlogPost.title}/>
-				{console.log('props.data.contentfulBlogPost.fluid: ', props.data.contentfulBlogPost.media.fluid.src)}
 			</div>
-
 		</LayoutPage>
 	)
 }

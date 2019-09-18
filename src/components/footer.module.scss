@@ -1,7 +1,7 @@
 @import './../styles/index.scss';
 
 .content {
-	@include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 600, 1rem, var(--rlg-color-medium-tint));
+	@include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 300, 16px, var(--rlg-color-medium-tint));
 	padding: 12px 0 0 0;
-	border-top: 1px solid rgba(black, .25);
+	border-top: 1px solid rgba(black, .5);
 }

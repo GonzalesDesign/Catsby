@@ -1,16 +1,48 @@
-@import './../styles/index.scss';
+@import "./../styles/index.scss";
 
-.container {
-	margin: 0 auto;
-	max-width: 750px;
-	padding: 1rem;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //   justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid blue;
 
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+  .container {
+    display: flex;
+    flex-direction: column;
+	 align-items: center;
+	 position: relative;
+	//  top: 50px;
+    max-width: 70vw; //750px;
+    min-height: 100vh;
+    padding: 0; //1rem;
+    // margin-bottom: 4rem;
+    border: 1px solid purple;
+  }
+
+  .content {
+    flex-grow: 1;
+    margin-top: 4rem;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    // align-content: flex-end;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-image: url("./../assets/media/background-images/savannah-sunset.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    // opacity: 0.5;
+    z-index: -110;
+    border: 1px solid grey;
+  }
+  
 }
-
-.content {
-	flex-grow: 1;
-}
-

@@ -1,0 +1,43 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  // align-content: flex-end;
+  align-items: center;
+  // width: 100vw;
+  height: 300px;
+  margin-bottom: 1.45rem;
+  //  position: fixed;
+  background-image: url("./../assets/media/background-images/savannah.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  // opacity: 0.85;
+  z-index: -100;
+  border: 1px solid grey;
+}
+
+.bodyCopy {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 20%;
+  margin: 4rem;
+  background: white;
+  width: 70vw;
+
+  //   height: 720px;
+  //   background-image: url("./../assets/media/background-images/savannah.jpg")
+  //     no-repeat center fixed;
+  //   -webkit-background-size: cover;
+  //   -moz-background-size: cover;
+  //   -o-background-size: cover;
+  //   background-size: cover;
+  //   //   background-color: #1c120c;
+  //   background-attachment: fixed;
+  //   position: relative;
+  //   //   overflow: hidden;
+  //   border: 1px solid yellow;
+}
