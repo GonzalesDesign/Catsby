@@ -1,95 +1,61 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
-// import LayoutPage from '../../components/layout';
-import Head from "../../components/head"
-
+import HeadHelmet from "../../components/head"
 import Grid from "@material-ui/core/Grid"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
 // import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import CardMedia from "@material-ui/core/CardMedia"
-
 import HomeStyles from "./homePosts.module.scss"
 
-const useStyles = makeStyles({
-  card: {
-    // maxWidth: 345,
-  },
-  cardMedia: {
-    textDecoration: "none",
-    backgroundPositionY: 0,
-    backgroundSize: "cover",
-  },
-  media: {
-    height: 140,
-    backgroundPositionY: -40,
-    backgroundSize: "cover",
-    "&:hover": {
-      backgroundSize: "110%",
-    },
-  },
-  cardFont: {},
-})
 
 ///////////////////////////////////////////////////////////////
 // export default function HomeArticlePostsComponent() {
 const HomeArticlePostsComponent = () => {
- 
-  const classes = useStyles()
+   const classes = useStyles()
 
-  /*--=| BlogPost |=---*/
-  const datas = useStaticQuery(graphql`
-    query {
-      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
-        edges {
-          node {
-            id
-            title
-            slug
-            publishedDate(formatString: "MMMM DD, YYYY")
-            media {
-              fluid {
-                ...GatsbyContentfulFluid
-              }
+   const homeArticleQuery = useStaticQuery(graphql`
+      query {
+         allContentfulCatsby(
+            sort: { fields: publishedDate, order: DESC }
+            filter: { tags: { eq: "about" } }
+         ) # filter: {slug: {eq: "cheetah"}}
+         # filter: {catsby: {elemMatch: {sectionRef: {elemMatch: {title:{eq:" "}}}}}}
+         # featured: {eq: true}
+         {
+            edges {
+               node {
+                  id
+                  title
+                  slug
+                  tags
+                  # tags (title: {eq: "about"})
+                  publishedDate(formatString: "MMMM DD, YYYY")
+                  media {
+                     fluid {
+                        ...GatsbyContentfulFluid
+                     }
+                  }
+                  body {
+                     json
+                  }
+               }
             }
-            body {
-              json
-            }
-          }
-        }
+         }
       }
-    }
-  `)
-  console.log("datas: ", datas)
+   `)
+   
+   return (
+      <React.Fragment>
+         <HeadHelmet title="Home Posts" />
 
-  // const categoryDatas = useStaticQuery( graphql`
-  //   query {
-  //     allContentfulCategory {
-  //       edges {
-  //         node {
-  //           blog_post {
-  //             title
-  //           }
-  //           home {
-  //             title
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-  // console.log("categoryDatas: ", categoryDatas)
+         {/* <LayoutPage> */}
+            {/* <Single /> */}
 
-  return (
-    <React.Fragment>
-      <Head title="Home Posts" />
-
-      {/* <Single /> */}
-
-      {/* =--------------------------------= */}
-      {/* <div>
+            {/* =--------------------------------= */}
+            {/* <div>
         {categoryDatas.allContentfulCategory.edges.map(({ node }) => {
           return (
             <React.Fragment>
@@ -99,82 +65,111 @@ const HomeArticlePostsComponent = () => {
           )
         })}
       </div> */}
-      {/* =--------------------------------= */}
+            {/* =--------------------------------= */}
 
-      <Grid container spacing={4}>
-        {datas.allContentfulBlogPost.edges.map(({ node }) => {
-          //  const title = node.title || node.slug
-          // console.log("node: ", node)
-          // console.log("title: ", title)
+            <Grid container spacing={4}>
+               {homeArticleQuery.allContentfulCatsby.edges.map(({ node }) => {
+                  //  const title = node.title || node.slug
+                  // console.log("node: ", node)
+                  // console.log("title: ", title)
 
-          return (
-            <Grid item xs={8} sm={6} key={node.id}>
-              <Card className={classes.card}>
-                <CardActionArea>
-                  {/* <Link to={`/blog-template/${node.slug}`} className={classes.cardMedia} > */}
-                  
-                  {/* <Link
-                    to={`/homePost/${node.slug}`}
-                    className={classes.cardMedia}
-                  > */}
-                  <Link
-                    to={`/postTemplate/${node.slug}`}
-                    className={classes.cardMedia}
-                  >
+                  return (
+                     <Grid
+                        item
+                        xs={12}
+                        md={6}
+                        key={node.id}
+                        style={{
+                           // padding: "0 auto",
+                           // margin: "0 auto",
+                           display: "flex",
+                           justifyContent: "center",
+                           // gridTemplateColumns: "1 1",
+                           // gridTemplateRows: "auto",
+                           // background: "white",
+                           //  gridGap: '10px',
+                           //  justifySelf: 'center',
+                           // width: "70%",
+                           border: "1px solid red",
+                        }}
+                     >
+                        <Card
+                           className={classes.card}
+                           style={{
+                              // padding: "0 auto",
+                              // margin: "0 auto",
+                              // display: "grid",
+                              // gridTemplateColumns: "1 1",
+                              // gridTemplateRows: "auto",
+                              justifySelf: "center",
+                              width: 350,
+                              // alignItems: 'center',
+                              border: "1px solid purple",
+                           }}
+                        >
+                           <CardActionArea>
+                              <Link
+                                 to={`/postTemplate/${node.slug}`}
+                                 className={classes.cardMedia}
+                              >
+                                 <CardMedia
+                                    className={classes.media}
+                                    image={node.media.fluid.src}
+                                    title={node.title}
+                                 />
 
-                    <CardMedia
-                      className={classes.media}
-                      image={node.media.fluid.src}
-                      title={node.title}
-                    />
-
-                    <CardContent className={HomeStyles.title}>
-                      <h4>{node.title}</h4>
-                      <p>{node.publishedDate}</p>
-                      <h5>{node.subTitle}</h5>
-                    </CardContent>
-                  </Link>
-                </CardActionArea>
-              </Card>
+                                 <CardContent
+                                    className={[HomeStyles.title, classes.contentText]}
+                                    // className={HomeStyles.title}
+                                    // className={classes.contentText}
+                                 >
+                                    <h4>{node.title}</h4>
+                                    <p>{node.publishedDate}</p>
+                                    {/* <h5>{node.subTitle}</h5> */}
+                                 </CardContent>
+                              </Link>
+                           </CardActionArea>
+                        </Card>
+                     </Grid>
+                  )
+               })}
             </Grid>
-          )
-        })}
-      </Grid>
-
-      {/* <ol className={HomeStyles.posts}>
-        {datas.allContentfulBlogPost.edges.map(data => {
-          return (
-            <li className={HomeStyles.post} key={data.node.id}>
-              <Link to={`/blogPost/${data.node.slug}`}>
-                <h2 className={HomeStyles.title}>{data.node.title}</h2>
-              </Link>
-              <p className={HomeStyles.date}>{data.node.publishedDate}</p>
-
-              <img src={data.node.media.fluid.src} alt={data.node.title}/>
-              {console.log('data.node.fluid: ', data.node.media.fluid.src)}
-            </li>
-          )
-        })}
-      </ol> */}
-    </React.Fragment>
-  )
+      </React.Fragment>
+   )
 }
 
 export default HomeArticlePostsComponent
 
-// const useStyles = makeStyles({
-// 	cardLion: {
-// 		width: 400,
-// 		height: 400,
-// 		// position: "fixed",
-// 		backgroundImage: "url('./../../assets/media/background-images/lion-king.jpg')",
-// 		// backgroundImage: "url('./../../../assets/media/background-images/lion-king.jpg')",
-// 		backgroundRepeat: "no-repeat",
-// 		backgroundSize: "cover",
-// 		backgroundPositionX: "center",
-// 		backgroundPositionY: "center",
-// 		// opacity: 0.5,
-// 		// zIndex: "-110",
-// 		border: "5px solid yellowGreen",
-// 	},
-//  })
+const useStyles = makeStyles({
+   card: {
+      //  maxWidth: 345,
+      height: 300,
+   },
+   cardMedia: {
+      textDecoration: "none",
+      backgroundPositionY: 0,
+      //  backgroundSize: "cover",
+   },
+   media: {
+      height: 220,
+      backgroundPositionY: "top",
+      backgroundSize: "cover",
+      "&:hover": {
+         backgroundSize: "110%",
+      },
+   },
+   cardFont: {},
+   contentText: {
+      "& h4": {
+         color: "var(--rlg-color-medium-tint2)",
+         fontWeight: 400,
+         marginBottom: 0,
+      },
+      "& p": {
+         color: "var(--rlg-color-dark)",
+         fontSize: ".7rem",
+         fontWeight: 400,
+         textTransform: "uppercase",
+      },
+   },
+})

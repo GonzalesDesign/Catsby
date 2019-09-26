@@ -7,23 +7,28 @@ import "./../styles/index.scss"
 import layoutStyles from "./layout.module.scss"
 
 const LayoutPage = props => {
-  // console.clear();
+	// console.clear();
 
-  return (
-    <div className={layoutStyles.wrapper}>
-      {/* <div className={layoutStyles.hero} /> */}
-      <NavHeaderComponent />
+	return (
+		<div className={layoutStyles.layoutMainContainer}>
+			
+			<NavHeaderComponent /> {/* Top Navigation */}
+			
+			<div className={layoutStyles.hero} />
+			<div className={layoutStyles.mainContainer}>
 
-      <div className={layoutStyles.container}>
-        <div className={layoutStyles.content}>
-          {props.children}
-        </div>
+				<div className={layoutStyles.container}>
+					
+					<div className={layoutStyles.content}>
+						{props.children}
+					</div>
 
-        {/* sticky footer at the bottom */}
-        <FooterPage />
-      </div>
-    </div>
-  )
+					{/* sticky footer at the bottom */}
+					<FooterPage />
+				</div>
+			</div>
+		</div>
+	)
 }
 
 export default LayoutPage

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
 import LayoutPage from "./../../components/layout"
-import Head from "./../../components/head"
+import HeadHelmet from "./../../components/head"
 
 import AboutStyle from "./about.module.scss"
 
@@ -53,7 +53,7 @@ const AboutPage = () => {
 
   return (
     <LayoutPage>
-      <Head title="About" />
+      <HeadHelmet title="About" />
 
       {/* markDown files */}
       <div className={AboutStyle.container}>
@@ -63,7 +63,7 @@ const AboutPage = () => {
             const date = node.frontmatter.date
             // const id = node.frontmatter.title
             const slug = node.fields.slug
-            const image = node.frontmatter.image
+            // const image = node.frontmatter.image
             // const html = node.html
             //  console.log("slug: ", slug)
             //  console.log("image: ", image)

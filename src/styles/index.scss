@@ -80,6 +80,7 @@ dfn {
 h1 {
   font-size: 2em;
   // margin: 0.67em 0;
+  line-height: 1;
 }
 mark {
   background-color: #ff0;
@@ -241,6 +242,7 @@ h1 {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
+  margin-bottom: auto;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -343,7 +345,7 @@ h5 {
   @include fontFamilyWeightSizeColor(
     var(--rlg-font-OpenSans),
     300,
-    .8rem,
+    1rem,
     var(--rlg-color-medium-tint)
   );
 
@@ -364,11 +366,14 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  //   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  // font-weight: bold;
+  @include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 500, 12px, var(--rlg-color-medium));
+  // line-height: 1.6;
+  text-transform: uppercase;
   text-rendering: optimizeLegibility;
-  font-size: 0.78405rem;
+  // font-size: 0.78405rem;
   line-height: 1.1;
 }
 hgroup {
@@ -434,13 +439,9 @@ p {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  @include fontFamilyWeightSizeColor(
-    var(--rlg-font-OpenSans),
-    300,
-    1rem,
-    var(--rlg-color-medium-tint)
-  );
-  line-height: 1.5;
+  // @include fontFamilyWeightSizeColor( var(--rlg-font-OpenSans), 300, 1rem, var(--rlg-color-medium-tint) );
+  @include fontFamilyWeightSizeColor (var(--rlg-font-Merriweather), 300, 16px, var(--rlg-color-medium));
+  line-height: 1.6;
 }
 figure {
   margin-left: 0;

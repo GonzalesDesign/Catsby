@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 // import { Link, graphql, useStaticQuery, StaticQuery } from 'gatsby';
 
 // import './header.scss' //still global
@@ -7,22 +7,24 @@ import headerStyles from "./nav-header.module.scss"
 
 const NavHeaderComponent = () => {
   
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          author
-          description
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //         author
+  //         description
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <React.Fragment>
 
       <header className={headerStyles.container}>
+
+      {/* <div className={headerStyles.logo}></div> */}
 
       {/* <div className={headerStyles.hero} /> */}
 
@@ -39,9 +41,9 @@ const NavHeaderComponent = () => {
 				~ {data.site.siteMetadata.author}
 			</p> */}
 
+        <div className={headerStyles.logo}></div>
         <nav className={headerStyles.header}>
           <ul className={headerStyles.navList}>
-            <div className={headerStyles.logo}>VXZ</div>
 
             <li>
               <Link
@@ -63,7 +65,7 @@ const NavHeaderComponent = () => {
             </li>
             <li>
               <Link
-                to={"/blog/blogPosts"}
+                to={"/blog/"}
                 className={headerStyles.navItem}
                 activeClassName={headerStyles.activeNavItem}
               >

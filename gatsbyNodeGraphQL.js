@@ -1,6 +1,6 @@
 const gatsbyNodeGraphQL = `
   post: 
-		allContentfulBlogPost {
+		allContentfulCatsby {
 			edges {
 				node {
 					slug

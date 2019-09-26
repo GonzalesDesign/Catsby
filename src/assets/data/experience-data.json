@@ -1,0 +1,270 @@
+[
+    {
+        "id": "e0",
+        "name": "R.Lloyd Gonzales",
+        "profession": "UI DESIGNER • \nANGULAR ~ IONIC4 ~ REACTJS DEVELOPER",
+        "logo": "gdLogo.jpg",
+        "url": "./../assets/cupra-racer5.jpg",
+        "profileSummary": "A designer who codes. It doesn't make me a better designer, I do it because I love it. I started having fond of javascript when it was introduced as AS3 in Flash platform. Coded lots of interactive pages with Flash and continued on with HTML5, SCSS, and JS and now with Typescript and Angular framework. Self-motivated, independent, detail oriented and responsible team-player. Lately, I've been building PWA templates using Ionic4 and Angular 7.",
+        "address": {
+            "street": "226 Chase Drive",
+            "city": "Somerdale,",
+            "state": "NJ",
+            "zip": "08083"
+        },
+        "phone": "(856) 383 • 7203",
+        "email": "rolandolloyd@gmail.com",
+        "imagePath": "../../assets/images/",
+        "menu": [
+            {
+                "id": "0",
+                "name": "Menu",
+                "shortName": "Menu",
+                "menuIcon": "menu",
+                "targetid": "mainContainerId"
+            },
+            {
+                "id": "1",
+                "name": "Profile Summary",
+                "shortName": "Profile",
+                "menuIcon": "mood",
+                "targetid": "profileId"
+            },
+            {
+                "id": "2",
+                "name": "Experience",
+                "shortName": "Jobs",
+                "menuIcon": "work",
+                "targetid": "experienceId"
+            },
+            {
+                "id": "3",
+                "name": "Education",
+                "shortName": "School",
+                "menuIcon": "school",
+                "targetid": "educationId"
+            },
+            {
+                "id": "4",
+                "name": "Social Medias",
+                "shortName": "Social",
+                "menuIcon": "share",
+                "targetid": "socialMediasId"
+            },
+            {
+                "id": "5",
+                "name": "Technologies",
+                "shortName": "Tech",
+                "menuIcon": "memory",
+                "targetid": "technologiesId"
+            }
+        ],
+        "education": [
+            {
+                "school": "PRATT Institute",
+                "location": "New York, N.Y."
+            },
+            {
+                "school": "Far Eastern University",
+                "location": "Manila, Philippines"
+            }
+        ],
+        "social": [
+            {
+                "media": "LinkedIn",
+                "cursor": "pointer",
+                "icon": "fab social-fab fa-2x fa-linkedin",
+                "linkUrl": "https://www.linkedin.com/in/RLGonzales/"
+            },
+            {
+                "media": "Facebook",
+                "cursor": "pointer",
+                "icon": "fab social-fab fa-2x fa-facebook-square",
+                "linkUrl": "https://www.facebook.com/RLloydGonzalesDesign/"
+            },
+            {
+                "media": "Twitter",
+                "cursor": "pointer",
+                "icon": "fab social-fab fa-2x fa-twitter-square",
+                "linkUrl": "https://twitter.com/FreshNPersonal/"
+            },
+            {
+                "media": "Instagram",
+                "cursor": "default",
+                "icon": "fab social-fab fa-2x fa-instagram",
+                "linkUrl": "no-link"
+            }
+        ],
+        "technologies": [
+            {
+                "tech": "HTML5",
+                "icon": "fab social-fab fa-2x fa-html5"
+            },
+            {
+                "tech": "CSS3",
+                "icon": "fab social-fab fa-2x fa-css3"
+            },
+            {
+                "tech": "ES2015",
+                "icon": "fab social-fab fa-2x fa-js-square"
+            },
+            {
+                "tech": "ANGULAR",
+                "icon": "fab social-fab fa-2x fa-angular"
+            },
+            {
+                "tech": "IONIC 4",
+                "icon": "far social-fab fa-2x fa-dot-circle"
+            },
+            {
+                "tech": "PHOTOSHOP",
+                "icon": "fab social-fab fa-2x fa-adobe"
+            },
+            {
+                "tech": "ILLUSTRATOR",
+                "icon": "fab social-fab fa-2x fa-adobe"
+            },
+            {
+                "tech": "GITHUB",
+                "icon": "fab social-fab fa-2x fa-github-square"
+            },
+            {
+                "tech": "NODE-JS",
+                "icon": "fab social-fab fa-2x fa-node-js"
+            }
+        ],
+        "portfolio": [
+            {
+                "id": 0,
+                "image": "imageGoesHere.jpg",
+                "title": "Frameworks",
+                "subTitle": "RLG Portfolio Site 2019",
+                "role": "UI Designer | Angular 7 • Ionic 4 • ReactJS Developer",
+                "date": "2019",
+                "locale": "Somerdale, NJ",
+                "description": "Javascript frameworks are great! Here are a few of the sites I've done using Angular, Ionic, and ReactJS. \nMy portfolio site, done in Angular and Angular Material. Pulling data from a JSON file using Observable. Responsiveness is done in JavaScript level and animated using GSAP engine. PWA sites that are done using Ionic4 & Angular7: Vodka App, Thoughts App. Lately, I've been coding in ReactJS with Hooks, Viewer for Thoughts App.",
+                "displaySite": true,
+                "frameworksSite": [
+                    {
+                        "id": "fws0",
+                        "title": "RLloydGonzales Portfolio Site",
+                        "subTitle": "Built with Angular 7 & GSAP engine",
+                        "url": "https://pwa.rlloydgonzales.com"
+                    },
+                    {
+                        "id": "fws1",
+                        "title": "Vodka App",
+                        "subTitle": "Built with Angular 7 & Ionic 4",
+                        "url": "https://vodka.rlloydgonzales.com"
+                    },
+                    {
+                        "id": "fws2",
+                        "title": "Inspirationl App Admin",
+                        "subTitle": "Built with Ionic 4 & Angular 7",
+                        "url": "https://ideas.rlloydgonzales.com"
+                    },
+                    {
+                        "id": "fws3",
+                        "title": "Inspirationl App Viewer",
+                        "subTitle": "Built with ReactJS Hooks",
+                        "url": "https://react.rlloydgonzales.com/about"
+                    }
+                ]
+            },
+            {
+                "id": 1,
+                "image": "imageGoesHere.jpg",
+                "title": "Freelancer",
+                "subTitle": "Various Industries",
+                "role": "UI Designer • Coder • Illustrator • Retoucher • Animator • Video Editor",
+                "date": "2011 ~ Present",
+                "locale": "NY, NJ, CA, Philippines",
+                "description": "As a Freelancer, I worked on various projects for several companies responsible for diverse types of projects wearing different hats.",
+                "displaySite": false,
+                "frameworksSite": [
+                    { }
+                ]
+            },
+            {
+                "id": 2,
+                "image": "imageGoesHere.jpg",
+                "title": "JTNS",
+                "subTitle": "Jill Tucker Nursing Services",
+                "role": "Coder • UI Designer",
+                "date": "2017",
+                "locale": "San Diego, CA",
+                "description": "JTNS website is a brochure type of a site for the information of their services. The client wanted to create multiple sites and required the ability to update the sites for content. I built the site using HTML, CSS, and Javascript. The development code was written in ES2015, SCSS, JQuery, Babel, Webpack and NodeJS. I wrote the template with ES2015 pulling content from JSON files which the client can update. I used Webpack and Babel to transpile the ES6 codes to ES5. The animation is done using GSAP engine.",
+                "displaySite": true,
+                "frameworksSite": [
+                    {
+                        "id": "jtns0",
+                        "title": "JTNS Git",
+                        "subTitle": "Built with ES6",
+                        "url": "https://github.com/GonzalesDesign/JillTuckerNursingServices"}
+                ]
+            },
+            {
+                "id": 3,
+                "image": "imageGoesHere.jpg",
+                "title": "OwnPhones",
+                "subTitle": "Wireless Earbuds",
+                "role": "UI Designer • Coder • Illustrator",
+                "date": "2013 ~ 2015",
+                "locale": "San Diego, CA",
+                "description": "OwnPhones, custom wireless earbuds is a startup company based in Downtown, San Diego, CA. I was hired to develop and design the website and other promotional graphics elements. Designed the company logo. We generated almost $1 million in funding through the Kickstarter partnership. \nI also built a couple of short promo video animations that were done using Cinema 4D and Apple Final Cut Pro X software.",
+                "displaySite": true,
+                "frameworksSite": [
+                    {
+                        "id": "op0",
+                        "title": "Animation Promos",
+                        "subTitle": "Built using: Cinema 4D & Apple ",
+                        "url": "https://youtube.com/OdeePootTube"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "image": "imageGoesHere.jpg",
+                "title": "GraficaGroup",
+                "subTitle": "Advertising Agency",
+                "role": "Art Director • UI Designer • Flash Coder • Illustrator",
+                "date": "2003 ~ 2009",
+                "locale": "Morristown, NJ",
+                "description": "An integrated marketing and advertising agency that specializes in direct, strategic-based marketing communications. Hired as an Art Director responsible for the following accounts: HorizonBlue (BCBSNJ), Century21, New Jersey's Clean Energy Program (NJCEP) ,  Summit Medical Group, and others. ",
+                "displaySite": false,
+                "frameworksSite": [
+                    {}
+                ]
+            },
+            {
+                "id": 5,
+                "image": "imageGoesHere.jpg",
+                "title": "TanaGraphics • TanaInteractive",
+                "subTitle": "Commercial & Digital Printer • Interactive",
+                "role": "Retoucher • Interactive Director",
+                "date": "1998 ~ 2003",
+                "locale": "New York, NY",
+                "description": "Tanagraphics Inc is a provider of graphics solutions. The Company's services include commercial and digital printing, and binding and mailing, as well as web and browser based services including design, development and custom software packages. \n Started TanaInteractive to provide web based solutions to our existing clientele.",
+                "displaySite": false,
+                "frameworksSite": [
+                    {}
+                ]
+            },
+            {
+                "id": 6,
+                "image": "imageGoesHere.jpg",
+                "title": "Gannett Newspaper",
+                "subTitle": "USAToday • USAWeekend",
+                "role": "Graphics Designer • Illustrator",
+                "date": "1993 ~ 1998",
+                "locale": "New York, NY",
+                "description": "Gannett is a leading media and marketing company with unparalleled local-to-national reach, successfully connecting consumers, communities and businesses. \n Worked as a Graphics Designer and Illustrator for USAToday and USAWeekend. Trained other designer migrate to the digital realm using the Mac, Quark, Photoshop, Illustrator & Freehand software. Improved bridge the usage of DTP from New York to Washington offices.",
+                "displaySite": false,
+                "frameworksSite": [
+                    {}
+                ]
+            }
+        ]
+        
+    }
+]

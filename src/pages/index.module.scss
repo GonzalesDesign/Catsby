@@ -3,30 +3,40 @@
   justify-content: center;
   // align-content: flex-end;
   align-items: center;
-  // width: 100vw;
-  height: 300px;
+  width: 100vw;
+  height: 200px;
   margin-bottom: 1.45rem;
   //  position: fixed;
   background-image: url("./../assets/media/background-images/savannah.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
-  background-position-y: center;
+  background-position-y: 60%;
   // opacity: 0.85;
   z-index: -100;
-  border: 1px solid grey;
+  // border: 1px solid grey;
 }
 
-.bodyCopy {
-  display: inline-flex;
+.container {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
-  justify-content: center;
+  width: 100vw;
+  height: auto;
+  // border: 1px solid green;
+
+}
+.bodyCopy {
+  // display: grid;
+  // flex-direction: column;
+  // align-items: center;
+  // align-content: center;
+  // justify-content: center;
+  // justify-self: center;
   padding: 20%;
-  margin: 4rem;
+  // margin: 4rem;
   background: white;
-  width: 70vw;
+  // width: 70vw;
 
   //   height: 720px;
   //   background-image: url("./../assets/media/background-images/savannah.jpg")

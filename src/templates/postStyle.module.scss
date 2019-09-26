@@ -1,6 +1,8 @@
 @import './../styles/index.scss';
 
 
+$hoverActive: rgb(248, 252, 11);
+
 h4 {
 	// @include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 300, 1.5rem, var(--rlg-color-medium-tint));
 	text-transform: uppercase;
@@ -12,7 +14,11 @@ h5 {
 }
 
 .template {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	background: white;
+	padding: 2rem;
+	// margin-top: 4rem;
 
 	.title {
 		@include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 400, 2.5rem, var(--rlg-color-medium-tint));
@@ -22,8 +28,13 @@ h5 {
 
 	.publishedDate {
 		@include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 300, .8rem, var(--rlg-color-medium-tint));
-		margin: 16px 0 60px;
+		margin:  0 0 20px 0;
 		// border: 1px solid grey;
 	}
+
+	.active-nav-item {
+      color: $hoverActive;
+      font-weight: bold;
+   }
 
 }

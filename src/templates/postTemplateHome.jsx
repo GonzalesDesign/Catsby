@@ -3,10 +3,10 @@ import { graphql } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'; //npm install
 // import Img from 'gatsby-image'
 
-import LayoutPage from './../components/layout';
+import LayoutPage from '../components/layout';
 import postStyles from'./postStyle.module.scss'
 
-import HeadHelmet from './../components/head'
+import HeadHelmet from '../components/head'
 
 
 // export const queryAllContentType = graphql`
@@ -23,10 +23,9 @@ import HeadHelmet from './../components/head'
 // console.log('queryAllContentType: ', queryAllContentType.node.data.name);
 // if()
 
-export const queryPost = graphql`
-		query PostQuery($slug: String!) {
-			contentfulCatsby(slug: {eq: $slug}) {
-				id
+export const queryData = graphql`
+		query ($slug: String!) {
+			contentfulHome(slug: {eq: $slug}) {
 				title
 				slug
 				publishedDate(formatString: "MMMM Do, YYYY")
@@ -42,16 +41,14 @@ export const queryPost = graphql`
 			}
 		}
 	`
-	console.log('queryPost: ', queryPost);
-
-	
+	console.log('home template queryData: ', queryData);
 
 
 
-const PostTemplate = (props) => {
 
-	console.log('PostTemplate:props: ',props);
-	
+
+const BlogTemplate = (props) => {
+
 	const richTxtAssetOptions = {
 		renderNode: {
 			"embedded-asset-block": (node) => {
@@ -61,32 +58,29 @@ const PostTemplate = (props) => {
 			}
 		}
 	}
-
-	const post = props.data.contentfulCatsby;
 	
 	return(
 		<LayoutPage>
 			
-			<HeadHelmet title={post.title}/>
+			<HeadHelmet title={props.data.contentfulHome.title}/>
+			{console.log('props.data.contentfulHome.title: ', props.data.contentfulHome.title)}
 
-			<div className={postStyles.template}
-				// activeClassName={postStyles.activeNavItem}
-				>
+			<div key={props.data.id} className={postStyles.template}>
 				<h1 className={postStyles.title}>
-					{post.title}
+					{props.data.contentfulHome.title}
 				</h1>
 				<p className={postStyles.publishedDate}> 
-					{post.publishedDate}
+					{props.data.contentfulHome.publishedDate}
 				</p>
-					{/* {documentToReactComponents(post.body.json)} */}
-				{documentToReactComponents(post.body.json, richTxtAssetOptions)}
-				{/* <div dangerouslySetInnerHTML={{__html: post.body}}></div> */}
-					{/* <Img fluid={post.fluid} /> */}
-					{/* <Img fluid={post.media} /> */}
-				<img src={post.media.fluid.src} alt={post.title}/>
+					{/* {documentToReactComponents(props.data.contentfulHome.body.json)} */}
+				{documentToReactComponents(props.data.contentfulHome.body.json, richTxtAssetOptions)}
+				{/* <div dangerouslySetInnerHTML={{__html: props.data.contentfulHome.body}}></div> */}
+					{/* <Img fluid={props.data.contentfulHome.fluid} /> */}
+					{/* <Img fluid={props.data.contentfulHome.media} /> */}
+				<img src={props.data.contentfulHome.media.fluid.src} alt={props.data.contentfulHome.title}/>
 			</div>
 		</LayoutPage>
 	)
 }
 
-export default PostTemplate
+export default BlogTemplate

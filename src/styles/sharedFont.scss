@@ -7,7 +7,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 @import url("https://fonts.googleapis.com/css?family=Ovo");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 @import url("https://fonts.googleapis.com/css?family=Barlow+Condensed");
 @import url("https://fonts.googleapis.com/css?family=Muli");
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
@@ -52,7 +52,7 @@ $multistep-white-text-shadow: 0 0 #ffffff, 1px 1px #ffffff, 2px 2px #ffffff, 3px
 	font-weight: $fontWt;
 	font-size: $fontSz;
 	color: $Color;
-	// to use: @include fontFamilyWeightSizeColor ($rlg-primary-font, 600, 1em);
+	// to use: @include fontFamilyWeightSizeColor ($rlg-primary-font, 600, 1em, color);
 }
 
 /*---=| Shadow Mixin |=---*/

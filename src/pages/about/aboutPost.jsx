@@ -1,8 +1,8 @@
 import React from "react"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 import LayoutPage from "../../components/layout"
-import Head from "../../components/head"
-import AboutPostStyles from "./about.module.scss"
+// import HeadHelmet from "../../components/head"
+// import AboutPostStyles from "./about.module.scss"
 
 // export const query = graphql`
 //   query($slug: String!) {
@@ -20,7 +20,7 @@ import AboutPostStyles from "./about.module.scss"
 export default function AboutPost(props) {
   return (
     <LayoutPage>
-      {/* <Head title={props.data.markdownRemark.frontmatter.title} /> */}
+      {/* <HeadHelmet title={props.data.markdownRemark.frontmatter.title} /> */}
 
       {/* <div className={AboutPostStyles.container}>
 

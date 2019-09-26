@@ -1,8 +1,16 @@
+/**************************************************
+* Project: Catsby 
+* URL: projectname.com
+* Contact: rolandolloyd@gmail.com
+* Copyright © 2019 GonzalesDesign
+* Version: 19.09.07
+* Component: Archive Template
+* Note: Template for blog's archive section 
+**************************************************/
 import React from 'react';
 import { graphql } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'; //npm install
 // import Img from 'gatsby-image'
-
 import LayoutPage from './../components/layout';
 import postStyles from'./postStyle.module.scss'
 
@@ -23,9 +31,19 @@ import HeadHelmet from './../components/head'
 // console.log('queryAllContentType: ', queryAllContentType.node.data.name);
 // if()
 
-export const queryPost = graphql`
-		query PostQuery($slug: String!) {
-			contentfulCatsby(slug: {eq: $slug}) {
+export const queryArchive = graphql`
+		query ArchiveQuery {
+			contentfulCatsby {
+		
+		# query ArchiveQuery($slug: String!, $skip: Int!, $limit: Int! ) {
+		
+		# query ArchiveQuery($slug: String!) {
+		# 	contentfulCatsby(
+		# 			slug: {eq: $slug}
+		# 			# skip: $skip
+		# 			# limit: $limit
+		# 			) 
+		# {
 				id
 				title
 				slug
@@ -42,16 +60,14 @@ export const queryPost = graphql`
 			}
 		}
 	`
-	console.log('queryPost: ', queryPost);
+	console.log('queryArchive: ', queryArchive);
 
-	
+const ArchiveTemplate = (props) => {
 
+	const blogContent = props.data.contentfulCatsby
+	console.log('ArchiveTemplate:blogContent: ',blogContent);
 
-
-const PostTemplate = (props) => {
-
-	console.log('PostTemplate:props: ',props);
-	
+	console.log('ArchiveTemplate:props: ',props);
 	const richTxtAssetOptions = {
 		renderNode: {
 			"embedded-asset-block": (node) => {
@@ -89,4 +105,4 @@ const PostTemplate = (props) => {
 	)
 }
 
-export default PostTemplate
+export default ArchiveTemplate
