@@ -1,18 +1,16 @@
 @import "./../styles/index.scss";
 
-$hoverColor: var(--rlg-color-primary-tint);
-$hoverActive: var(--rlg-color-primary);
+$hoverColor: var(--rlg-color-danger);
+$hoverActive: var(--rlg-color-danger);
 
 .container {
    position: fixed;
-   display: inline-flex;
-  //  flex-direction: column;
-   // align-items: flex-start;
-   // padding: 1rem;
-   // margin-bottom: 16px;
-  //  background: var(--rlg-color-light);
-  // background-image: linear-gradient(90deg, (red, blue), 50%);
-  background-image: linear-gradient(
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+
+   background-image: linear-gradient(
       to right,
       rgba(249, 255, 224, 0.95) 25%,
       rgba(252, 213, 182, 0.95) 50%,
@@ -21,174 +19,90 @@ $hoverActive: var(--rlg-color-primary);
    width: 100vw;
    z-index: 1000;
    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
-  //  border: 1px solid green;
-  
-  .logo {
-    width: 70px;
-    height: 50px;
-    background: url("./../assets/media/catsby-logo.png");
-    // no-repeat center fixed;
-    background-size: contain;
-    background-repeat: no-repeat;
-    // padding: 10px;
-    margin: 20px 20px 12px 120px;
-    // border: 1px solid green;
+   // border: 6px solid cyan;
+
+   .logoContainer {
+      width: 70%;
+      padding: 20px 0 0 0;
+      border-bottom: 1px solid rgba(10, 10, 10, .5);
+      // border: 1px solid blue;
+
+      .logo {
+         background: url("./../assets/media/catsby-logo.png");
+         background-size: contain;
+         background-repeat: no-repeat;
+         background-position: center;
+         // margin: 20px 20px 12px 120px;
+         height: 40px;
+         // border: 1px solid green;
+      }
+   }
+
+   .nav-list { //ul
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      height: 100%;
+      width: 70vw;
+      list-style-type: none;
+      margin-left: 0px;
+      // border: 1px solid rgba(red, 0.9);
+
+      .nav-item { //li items
+         @include fontFamilyWeightSizeColor( var(--rlg-font-OpenSans), 500, 1rem, var(--rlg-color-dark) );
+         font-weight: 600;
+         text-transform: uppercase;
+         margin: 0 1.3rem 0 1rem;
+         margin-right: 1rem;
+         margin-bottom: 0px;
+         text-decoration: none;
+         text-shadow: 1px 1px 1px rgba(200, 200, 200, 0.75);
+         // border: 1px solid grey;
+      }
+      .nav-item:hover {
+         color: var(--rlg-color-danger);
+      }
+      .active-nav-item {
+         color: var(--rlg-color-danger);
+         // font-weight: 700;
+      }
+   }
+
+   nav {
+      display: flex;
+      width: 75vw;
+      background: transparent;
+      height: 70px;
+      // border: 4px solid orange;
    }
 }
+
 .title {
-   @include fontFamilyWeightSizeColor(
-      var(--rlg-font-OpenSans),
-      400,
-      3rem,
-      var(--rlg-color-medium)
-   );
-   // color: black;
-   // font-size: 3rem;
+   @include fontFamilyWeightSizeColor( var(--rlg-font-OpenSans), 400, 3rem, var(--rlg-color-medium) );
    line-height: 1;
    text-decoration: none;
    margin: 0px;
-   border: 1px solid grey;
+   // border: 1px solid grey;
 }
+
 .title:hover {
    color: $hoverColor;
 }
+
 .author {
-   @include fontFamilyWeightSizeColor(
-      var(--rlg-font-OpenSans),
-      400,
-      0.7rem,
-      var(--rlg-color-medium-tint2)
-   );
+   @include fontFamilyWeightSizeColor( var(--rlg-font-OpenSans), 400, 0.7rem, var(--rlg-color-medium-tint2) );
    text-transform: uppercase;
    letter-spacing: 1.5px;
    padding: 0;
    line-height: 0;
    margin: 2rem 0 3rem;
-   border: 1px solid grey;
+   // border: 1px solid grey;
 }
 .description {
-   @include fontFamilyWeightSizeColor(
-      var(--rlg-font-OpenSans),
-      400,
-      1.2rem,
-      var(--rlg-color-medium-tint2)
-   );
-   // font-style: italic;
+   @include fontFamilyWeightSizeColor( var(--rlg-font-OpenSans), 400, 1.2rem, var(--rlg-color-medium-tint2) );
+   
    padding: 0;
    line-height: 0;
-   border: 1px solid grey;
+   // border: 1px solid grey;
 }
-nav {
-   .header {
-      // display: flex;
-   }
-  //  background: var(--rlg-color-light);
-  background: transparent;
-   height: 50px;
-
-   .nav-list {
-      display: flex;
-      list-style-type: none;
-      margin: 14px;
-      padding: 12px 0 0 0;
-      // border-top: 1px solid rgba(black, 0.25);
-      // border-bottom: 1px solid rgba(black, 0.25);
-      border: 0px solid rgba(red, 0.9);
-    }
-    .nav-item {
-      @include fontFamilyWeightSizeColor(
-          var(--rlg-font-OpenSans),
-          500,
-          1rem,
-          var(--rlg-color-medium-tint2)
-      );
-      // color: grey;
-      // font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      // margin-right: 1rem;
-      text-decoration: none;
-      text-shadow: 1px 1px 1px rgba(200, 200, 200, 0.75);
-      margin: 0 1.3rem 0 1rem;
-      // border: 1px solid grey;
-   }
-   .nav-item:hover {
-      color: $hoverColor;
-   }
-   .active-nav-item {
-      color: $hoverActive;
-      font-weight: 700;
-   }
-}
-
-// a {
-// 	color: grey;
-// }
-
-// .logo {
-//    width: 70px;
-//    height: 50px;
-//    background: url("./../assets/media/catsby-logo.png") no-repeat center fixed;
-//    // -webkit-background-size: cover;
-//    // -moz-background-size: cover;
-//    // -o-background-size: cover;
-//    // background-size: cover;
-//    // background-color: #1c120c;
-//    // background-attachment:fixed;
-//    // position:relative;
-//    background-position-x: 20px;
-//    background-position-y: 1%;
-//    background-size: 10%;
-//    margin-left: 10px;
-//    // overflow:hidden;
-
-//    // // display: flex;
-//    // // justify-content: flex-start;
-//    // // position: absolute;
-//    // // padding: 6px;
-//    // margin-left: 40px;
-//    // // @include fontFamilyWeightSizeColor( $fontRye, 600, 2em, var(--rlg-color-light) );
-//    // // font-family: var(--rlg-font-Rye);
-//    // @include fontFamilyWeightSizeColor(var(--rlg-font-SocialIcons), 600, 2rem,
-//    //   var(--rlg-color-medium-tint) );
-//    // // font-family: var(--rlg-font-SocialIcons);
-//    // // font-size: 2em;
-//    // // font-style: normal;
-//    // // font-weight: 600;
-//    // // font-kerning: auto;
-//    // text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-//    // // color: var(--rlg-color-success-tint2);
-
-//    border: 1px solid grey;
-// }
-
-// .hero {
-// 	height: 200px;
-// 	background: url('./../assets/media/background-images/savannah.jpg') no-repeat center fixed;
-// 	-webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-// 	background-size: cover;
-// 	background-color: #1c120c;
-// 	background-attachment:fixed;
-// 	position:relative;
-// 	overflow:hidden;
-// }
-
-// .hero {
-//   display: flex;
-//   justify-content: center;
-//   // align-content: flex-end;
-//   align-items: center;
-//   width: 100vw;
-//   height: 500px;
-//   position: fixed;
-//   background-image: url("./../assets/media/background-images/savannah.jpg");
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-position-x: center;
-//   background-position-y: center;
-//   opacity: 0.85;
-//   z-index: -110;
-//   border: 1px solid grey;
-// }

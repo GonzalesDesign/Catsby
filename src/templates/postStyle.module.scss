@@ -22,11 +22,16 @@ h5 {
 
 	.title {
 		@include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 400, 2.5rem, var(--rlg-color-medium-tint));
-		margin: 0;
+		margin: 0 0 10px 0;
 		// border: 1px solid grey;
 	}
 
 	.publishedDate {
+		@include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 300, 1rem, var(--rlg-color-medium-tint));
+		margin:  0 0 0px 0;
+		// border: 1px solid grey;
+	}
+	.author {
 		@include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 300, .8rem, var(--rlg-color-medium-tint));
 		margin:  0 0 20px 0;
 		// border: 1px solid grey;

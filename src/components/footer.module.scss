@@ -1,7 +1,16 @@
-@import './../styles/index.scss';
+@import "./../styles/index.scss";
 
-.content {
-	@include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 300, 16px, var(--rlg-color-medium-tint));
-	padding: 12px 0 0 0;
-	border-top: 1px solid rgba(black, .5);
+footer {
+   .content {
+      @include fontFamilyWeightSizeColor(
+         var(--rlg-font-OpenSans),
+         400,
+         14px,
+         var(--rlg-color-danger-tint3)
+      );
+		padding: 12px 0;
+		text-align: center;
+		background: (rgba(var(--rlg-color-danger-rgb), 0.45) 100%);
+      border-top: 1px solid rgba(black, 0.5);
+   }
 }

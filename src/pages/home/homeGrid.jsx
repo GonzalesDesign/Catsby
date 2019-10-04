@@ -11,11 +11,8 @@ import React from "react"
 import { graphql, useStaticQuery, navigate } from "gatsby"
 import IndexStyles from "./home.module.scss"
 import { makeStyles } from "@material-ui/core/styles"
-// import { Grid } from '@material-ui/core/Grid';
 import HeadHelmet from "../../components/head"
-// import LayoutPage from '../../components/layout';
 
-// export default function HomeGridComponent() {
 const HomeGridComponent = () => {
    
    const classes = useStyles()
@@ -51,7 +48,7 @@ const HomeGridComponent = () => {
       }
    `)
 
-   // console.log("queryHome: ", queryHome)
+   console.log("queryHome: ", queryHome)
 
    return (
       <React.Fragment>
@@ -60,26 +57,20 @@ const HomeGridComponent = () => {
          <div className={classes.feed}>
             {queryHome.allContentfulCatsby.edges.map(({ node }) => {
                return (
-                  // <div>
-                  //    <Link to={`/postTemplate/${node.slug}`}
-                  //       className={IndexStyles.cardLink}>
-                        <div key={node.id}
-                           className={classes.cardIndex}
-                           style={{
-                              // backgroundImage: `url(${node.thumbnail.fluid.src})`
-                              backgroundImage: `linear-gradient(
-                              to bottom,
-                              rgba(10,10,10,0) 0%,
-                              rgba(10,10,10,0) 50%,
-                              rgba(10,10,10,.9) 100%),
-                              url(${node.thumbnail.fluid.src})`,
-                              }}
-                           onClick={ () => navigate(`/postTemplate/${node.slug}`)} >
-                           <div className={IndexStyles.cardTitle}>{node.title}</div>
-                           <div className={IndexStyles.cardSubTitle}>{node.subTitle}</div>
-                        </div>
-                  //    </Link>
-                  // </div>
+                  <div key={node.id}
+                     className={classes.cardIndex}
+                     style={{
+                        backgroundImage: `linear-gradient(
+                        to bottom,
+                        rgba(10,10,10,0) 0%,
+                        rgba(10,10,10,0) 50%,
+                        rgba(10,10,10,.9) 100%),
+                        url(${node.thumbnail.fluid.src})`,
+                        }}
+                     onClick={ () => navigate(`/postTemplate/${node.slug}`)} >
+                     <div className={IndexStyles.cardTitle}>{node.title}</div>
+                     <div className={IndexStyles.cardSubTitle}>{node.subTitle}</div>
+                  </div>
                )
             })}
          </div>
@@ -157,7 +148,10 @@ const useStyles = makeStyles( {
             gridChildLargeHt: 175,
             position: "relative",
             top: 0,
-			}
+         },
+         "&:nth-last-child(3)": {
+            gridColumnStart: "span 12",
+         },
 		},
 		"@media screen and (max-width: 600px)": {
 			"&:nth-child(n)": {

@@ -5,7 +5,7 @@
 * Copyright © 2019 GonzalesDesign
 * Version: 19.09.07
 * Component: Archive Template
-* Note: Template for blog's archive section 
+* Note: Template for blog post 
 **************************************************/
 import React from 'react';
 import { graphql } from 'gatsby';
@@ -34,9 +34,7 @@ import HeadHelmet from './../components/head'
 export const queryArchive = graphql`
 		query ArchiveQuery {
 			contentfulCatsby {
-		
 		# query ArchiveQuery($slug: String!, $skip: Int!, $limit: Int! ) {
-		
 		# query ArchiveQuery($slug: String!) {
 		# 	contentfulCatsby(
 		# 			slug: {eq: $slug}
@@ -64,10 +62,8 @@ export const queryArchive = graphql`
 
 const ArchiveTemplate = (props) => {
 
-	const blogContent = props.data.contentfulCatsby
-	console.log('ArchiveTemplate:blogContent: ',blogContent);
 
-	console.log('ArchiveTemplate:props: ',props);
+
 	const richTxtAssetOptions = {
 		renderNode: {
 			"embedded-asset-block": (node) => {
@@ -77,8 +73,12 @@ const ArchiveTemplate = (props) => {
 			}
 		}
 	}
-
+	
+	const blogContent = props.data.contentfulCatsby
 	const post = props.data.contentfulCatsby;
+	
+	console.log('ArchiveTemplate:blogContent: ',blogContent);
+	console.log('ArchiveTemplate:props: ',props);
 	
 	return(
 		<LayoutPage>

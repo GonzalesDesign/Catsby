@@ -1,6 +1,151 @@
-
-
 const path = require('path')
+/*--------------------=| Multiple content type using multiple templates: |=--------------------*/
+// module.
+exports.createPages = async ({ graphql, actions }) => {
+	const { createPage } = actions
+
+	/*--=| getPost: *******************************************************=---*/
+	const postTemplate = path.resolve('src/templates/postTemplate.jsx')
+	const getPost = await graphql(`
+		query {
+			allContentfulCatsby  {
+				edges {
+					node {
+						id
+						slug
+					}
+				}
+			}
+		}
+	`)
+	const posts = getPost.data.allContentfulCatsby.edges;
+	// console.log('********posts: ', posts);
+	posts.forEach(({node}) => {
+		createPage({
+			path: `/postTemplate/${node.slug}`,
+			component: postTemplate,
+			// path: node.slug,
+			context: {
+				// id: node.id,
+				slug: node.slug
+			}
+		})
+	})
+
+	/*--=| getBlog: *******************************************************=---*/
+	const blogTemplate = path.resolve('src/templates/blogTemplate.jsx')
+	const getBlog = await graphql(`
+		query {
+			allContentfulBlogPost  {
+				edges {
+					node {
+						id
+						slug
+					}
+				}
+			}
+		}
+	`)
+	const blogs = getBlog.data.allContentfulBlogPost.edges;
+	blogs.forEach(({node}) => {
+		createPage({
+			path: `/blogTemplate/${node.slug}`,
+			component: blogTemplate,
+			context: {
+				slug: node.slug,
+			}
+		})
+	})
+	/*--=| getContinentAsia: *******************************************************=---*/
+	const asiaTemplate = path.resolve('src/templates/asiaTemplate.jsx')
+	const getContinentAsia = await graphql(`
+		query {
+			allContentfulBlogPost (
+				filter: { 
+					node_locale: { eq: "en-US" },
+            	continent: {elemMatch: {title: {eq: "Asia"}}},
+				},
+			){ 
+				edges { 
+					node {
+						id
+						slug
+						continent {
+							id
+                     slug
+                  }
+					} 
+				} 
+			}		
+		}
+	`)
+	const asiaContinent = getContinentAsia.data.allContentfulBlogPost.edges;
+	console.log('********asiaContinent: ', asiaContinent);
+	asiaContinent.forEach(({node}) => {
+		createPage({
+			path: `/asiaTemplate/${node.continent.slug}`,
+			component: asiaTemplate,
+			// component: continentAsiaTemplate,
+			context: {
+				slug: node.continent.slug,
+			}
+		})
+	})
+
+	/*--=| getArchive: *******************************************************=---*/
+	const archiveTemplate = path.resolve('./src/templates/archiveTemplate.jsx')
+	const getArchive = await graphql(`
+		query {
+			allContentfulCatsby  {
+				edges {
+					node {
+						slug
+					}
+				}
+			}
+		}
+	`)
+	const archivePosts = getArchive.data.allContentfulCatsby.edges;
+	const blogsPerPage = 4
+	const numPages = Math.ceil(archivePosts.length / blogsPerPage)
+	// console.log('********archivePosts: ', archivePosts);
+	// console.log('********blogsPerPage: ', blogsPerPage);
+	// console.log('********numPages: ', numPages);
+	Array.from({ length: numPages }).forEach( (_, i) => {
+		// archivePosts.forEach( (_, i) => {
+			// console.log('********_: ', _);
+			// console.log('********i: ', i);
+		createPage({
+			// // path: i === 0 ? `/postTemplate` : `/postTemplate/${i + 1}`,
+			// path: i === 0 ? `/archiveTemplate` : `/archiveTemplate/${i + 1}`,
+			path: i === 0 ? `/archiveTemplate` : `/archiveTemplate/${i.slug}`,
+			component: archiveTemplate,
+			context: {
+				// slug: i.slug,
+				limit: blogsPerPage,
+				skip: i * blogsPerPage,
+				numPages,
+				currentPage: i + 1,
+			}
+		})
+	} )
+	
+	// console.log('getPost:*******************: ', getPost);
+	// console.log('getArchive:*******************: ', getArchive);
+	// console.log('**********************************************');
+	
+	// console.log('Promise:*******************: ', Promise);
+	return Promise.all(
+		[ 
+			getPost, 
+			getBlog, 
+			getContinentAsia, 
+			getArchive 
+		]
+		// console.log('Promise.getPost:*******************: ', getPost),
+		// console.log('Promise.archivePosts.node.title:*******************: ', archivePosts.node.slug),
+	)
+}
 
 // const { createPost, createHome } = require('./gatsby-createPage')
 // const gatsbyNodeGraphQL = require('./gatsbyNodeGraphQL')
@@ -40,128 +185,7 @@ const path = require('path')
 // 	})
 
 
-/*--------------------=| allContentfulCatsby using multiple templates: |=--------------------*/
 
-// module.
-exports.createPages = async ({ graphql, actions }) => {
-	const { createPage } = actions
-
-	console.log('/getPost: **********************************************/');
-	const postTemplate = path.resolve('src/templates/postTemplate.jsx')
-
-	const getPost = await graphql(`
-		query {
-			allContentfulCatsby  {
-				edges {
-					node {
-						id
-						slug
-					}
-				}
-			}
-		}
-	`)
-
-	const posts = getPost.data.allContentfulCatsby.edges;
-	// console.log('********posts: ', posts);
-
-	posts.forEach(({node}) => {
-		createPage({
-			path: `/postTemplate/${node.slug}`,
-			component: postTemplate,
-			// path: node.slug,
-			context: {
-				// id: node.id,
-				slug: node.slug
-			}
-		})
-	})
-
-	console.log('/getBlog: **********************************************/');
-	const blogTemplate = path.resolve('src/templates/blogTemplate.jsx')
-
-	const getBlog = await graphql(`
-		query {
-			allContentfulBlogPost  {
-				edges {
-					node {
-						id
-						slug
-					}
-				}
-			}
-		}
-	`)
-
-	const blogs = getBlog.data.allContentfulBlogPost.edges;
-	// console.log('********posts: ', posts);
-
-	blogs.forEach(({node}) => {
-		createPage({
-			path: `/blogTemplate/${node.slug}`,
-			component: blogTemplate,
-			// path: node.slug,
-			context: {
-				// id: node.id,
-				slug: node.slug
-			}
-		})
-	})
-
-	console.log('/getArchive: **********************************************/');
-	const archiveTemplate = path.resolve('./src/templates/archiveTemplate.jsx')
-
-	const getArchive = await graphql(`
-		query {
-			allContentfulCatsby  {
-				edges {
-					node {
-						slug
-					}
-				}
-			}
-		}
-	`)
-
-	const archivePosts = getArchive.data.allContentfulCatsby.edges;
-	const blogsPerPage = 4
-	const numPages = Math.ceil(archivePosts.length / blogsPerPage)
-
-	// console.log('********archivePosts: ', archivePosts);
-	// console.log('********blogsPerPage: ', blogsPerPage);
-	// console.log('********numPages: ', numPages);
-	
-
-	Array.from({ length: numPages }).forEach( (_, i) => {
-		// archivePosts.forEach( (_, i) => {
-			console.log('********_: ', _);
-			console.log('********i: ', i);
-		createPage({
-			// // path: i === 0 ? `/postTemplate` : `/postTemplate/${i + 1}`,
-			// path: i === 0 ? `/archiveTemplate` : `/archiveTemplate/${i + 1}`,
-			path: i === 0 ? `/archiveTemplate` : `/archiveTemplate/${i.slug}`,
-			component: archiveTemplate,
-			context: {
-				// slug: i.slug,
-				limit: blogsPerPage,
-				skip: i * blogsPerPage,
-				numPages,
-				currentPage: i + 1,
-			}
-		})
-	} )
-	
-	// console.log('getPost:*******************: ', getPost);
-	// console.log('getArchive:*******************: ', getArchive);
-	// console.log('**********************************************');
-	
-	// console.log('Promise:*******************: ', Promise);
-	return Promise.all(
-		[ getPost, getBlog, getArchive ],
-		// console.log('Promise.getPost:*******************: ', getPost),
-		// console.log('Promise.archivePosts.node.title:*******************: ', archivePosts.node.slug),
-	)
-}
 
 
 

@@ -2,11 +2,8 @@
 
 .layoutMainContainer {
    display: flex;
-   //   flex-direction: column;
    justify-content: center;
-   //   align-items: center;
    width: 100vw;
-   // height: 100vh;
    // border: 1px solid yellowgreen;
 
    background-image: linear-gradient(
@@ -16,35 +13,17 @@
       rgba(10, 10, 10, 0.25) 100%
    );
 
-   .mainContainer {
+   .childrenMainShell {
       display: flex;
-      max-width: 70vw;
-      // flex-direction: column;
-      // align-items: center;
-      //   justify-content: center;
-      margin-top: 60px;
       // border: 1px solid blue;
 
-      .container {
-         // display: flex;
-         // flex-direction: column;
-         // align-items: center;
-         // position: relative;
-         //  top: 50px;
-         // max-width: 70vw; //750px;
-         // min-height: 100vh;
-         padding: 0; //1rem;
-         // margin-bottom: 4rem;
+      .childrenShell {
+         padding-top: 100px; //1rem;
          background: (rgba(var(--rlg-color-danger-rgb), 0.5) 100%);
          // border: 1px solid purple;
       }
-      
+
       .content {
-         // display: flex;
-         // flex-direction: column;
-         align-items: center;
-         // flex-grow: 1;
-         // margin-top: 4rem;
          padding: 20px;
          width: 70vw;
          // border: 4px solid lightgreen;

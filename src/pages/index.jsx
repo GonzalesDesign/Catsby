@@ -4,35 +4,43 @@ import LayoutPage from "../components/layout"
 import HeadHelmet from "../components/head"
 import CatsbyPostsComponent from "./home/catsbyPosts"
 // import HomeArticlePostsComponent from "./home/home-article-posts"
-import HomeIndexComponent from "./home/index"
+// import HomeGridComponent from "./home/index"
 import ArticleComponent from "./home/article"
 // import ContactFeatureComponent from '../misc/homeX/profileX/contact-feature';
-import AllAboutTitleComponent from './home/allAbout-Title';
+import AllAboutTitleComponent from "./home/allAbout-Title"
+import IntroImage from "./home/introImage"
+import HomeGridComponent from "./home/homeGrid"
 
 const IndexPage = () => {
-
-	const classes = useStyles()
+   const classes = useStyles()
 
    return (
       <React.Fragment>
          <HeadHelmet title="Home" />
+
          <LayoutPage>
-
-				{/*---=| Grid layed out images: posts |=---*/}
-            <HomeIndexComponent />
-
-				{/*---=| All about title divider |=---*/}
-            <AllAboutTitleComponent />
-
-            
-				{/*---=| Card based images: posts |=---*/}
-            <div className={classes.catsbyArticles}>
-               <CatsbyPostsComponent />
+            {/*---=| BigKitty Image Intro |=---*/}
+            <div style={{ marginBottom: 30 }}>
+               <IntroImage />
             </div>
 
-				{/*---=| Single page article |=---*/}
-            <ArticleComponent />
+            {/*---=| Grid layed out images: posts |=---*/}
+            <HomeGridComponent />
 
+            {/*---=| All about title divider |=---*/}
+            <AllAboutTitleComponent />
+
+            {/*---=| Card based images: posts |=---*/}
+            <div className={classes.catsbyArticles}>
+               {/* <CatsbyPostsComponent /> */}
+            </div>
+
+            {/*---=| Single page article |=---*/}
+            <div
+               style={{ marginTop: 20, borderRadius: 10, overflow: "hidden" }}
+            >
+               <ArticleComponent />
+            </div>
          </LayoutPage>
       </React.Fragment>
    )

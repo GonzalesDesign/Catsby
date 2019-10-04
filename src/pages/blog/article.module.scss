@@ -1,0 +1,37 @@
+@import './../../styles/index.scss';
+
+.topImage {
+	width: 100vw;
+	border: 1px solid white;
+}
+
+.articleMainContainer {
+	
+
+	// background: var(--rlg-color-light);
+	// background-image: linear-gradient (to bottom,
+	// 	rgb(250, 236, 202) 0%,
+	// 	rgb(250, 236, 202) 20%,
+	// 	rgb(250, 236, 202) 100%, );
+	// 
+
+	.articleContainer {
+		// width: 70%;
+		// background: var(--rlg-color-light);
+		background-image: linear-gradient(
+			rgb(255, 184, 184), 
+			rgb(253, 253, 190), 
+			rgb(4, 123, 160));
+		padding: 40px;
+		border: 1px solid grey;
+
+		h4 {
+			@include fontFamilyWeightSizeColor (var(--rlg-font-OpenSans), 400, 1.5rem, var(--rlg-color-medium-shade));
+			// line-height: 1.9;
+		}
+		p {
+			@include fontFamilyWeightSizeColor (var(--rlg-font-Merriweather), 300, 16px, var(--rlg-color-medium-shade));
+			line-height: 1.6;
+		}
+	}
+}
